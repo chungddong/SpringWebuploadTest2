@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단</title>
+</head>
+<style>
+	
+	body {
+		margin : 0 auto;
+		text-align: center;
+	}
+	
+	table {
+		margin-left:auto; 
+    	margin-right:auto;
+	}
+	
+	th {
+		font-size: 24px;
+	}
+	
+	div {
+		font-size: 25px;
+	}
+</style>
+<body>
+	
+	<p></p>
+	
+	<h1>구구단표</h1>
+	
+	
+	<p></p>
+	<!--<th:block th:each="k : ${#numbers.sequence(1,9)}">
+		<th:block th:each="y : ${#numbers.sequence(1,9)}">
+			<div th:text="${k} + ' x ' + ${y} + '= ' + ${k * y}"></div>
+		</th:block>
+		<p></p>
+	</th:block>-->
+	
+	
+	<table border="1">
+        <tr>
+            <th th:each="k : ${#numbers.sequence(1,9)}" th:text="${k} + '단'"></th>
+        </tr>
+        <tr>
+            <td th:each="a : ${#numbers.sequence(1,9)}" class="gugudan">
+                <div th:each="b : ${#numbers.sequence(1,9)}" th:text="${a} + ' x ' + ${b} + '= ' + ${a * b} + ' '"><pre></div>
+            </td>
+        </tr>
+    </table>
+	
+	<div th:insert="~{common/footer::footer}"></div>
+
+</body>
+</html>

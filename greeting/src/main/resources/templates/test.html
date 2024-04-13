@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmln:th="https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>테스트</title>
+</head>
+<body>
+
+	<h1>인사하기</h1>
+	<th:block th:if="${name} == '홍길동' ">
+		<p>홍길동님!!! 반갑습니다.</p>
+	</th:block>
+	
+	<th:block th:unless="${name} == '홍길동' ">
+		<p><span th:text="${name}"></span>님 반갑습니다.</p>
+	</th:block>
+	
+	
+	<th:block th:switch="${year}">
+		<p th:case="4">4학년</p>
+		<p th:case="3">3학년</p>
+		<p th:case="2">2학년</p>
+		<p th:case="1">1학년</p>
+	</th:block>
+	
+	<div th:insert="~{common/footer::footer}"></div>
+
+</body>
+</html>
